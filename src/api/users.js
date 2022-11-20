@@ -38,4 +38,5 @@ export function logout(ctx) {
     get('/users/logout');
     clearUserData();
     ctx.updateNav();
+    ctx.page.redirect('/');
 }

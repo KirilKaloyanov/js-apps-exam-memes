@@ -12,8 +12,8 @@ const registerTemplate = (onSubmit) => html `
                 <input id="email" type="text" placeholder="Enter Email" name="email">
                 <label for="password">Password</label>
                 <input id="password" type="password" placeholder="Enter Password" name="password">
-                <label for="repass">Repeat Password</label>
-                <input id="repass" type="password" placeholder="Repeat Password" name="repass">
+                <label for="repeatPass">Repeat Password</label>
+                <input id="repeatPass" type="password" placeholder="Repeat Password" name="repeatPass">
                 <div class="gender">
                     <input type="radio" name="gender" id="female" value="female">
                     <label for="female">Female</label>
@@ -40,14 +40,14 @@ export function registerView(ctx) {
         const username = formData.get('username');
         const email = formData.get('email');
         const password = formData.get('password');
-        const repass = formData.get('repass');
+        const repeatPass = formData.get('repeatPass');
         const gender = formData.get('gender');
 
         if (username == '' || password == '' || email == '') {
             return alert('All fields are required!')
         }
 
-        if (password != repass) {
+        if (password != repeatPass) {
             return alert('Passwords don\'t match!')
         }
 

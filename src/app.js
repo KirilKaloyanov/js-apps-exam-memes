@@ -1,7 +1,9 @@
 import { logout } from './api/users.js';
-import {page, render} from './lib.js';
+import { page, render } from './lib.js';
 import { getUserData } from './util.js';
 import { catalogView } from './views/catalogView.js';
+import { createView } from './views/createView.js';
+import { detailsView } from './views/detailsView.js';
 import { homeView } from './views/homeView.js';
 import { loginView } from './views/loginView.js';
 import { registerView } from './views/registerView.js';
@@ -14,7 +16,9 @@ page('/memes', catalogView);
 page('/login', loginView);
 page('/register', registerView);
 page('/logout', logout);
-// page('/memes/details/:id', detailsView);
+page('/create', createView);
+page('/memes/details/:id', detailsView);
+page('/edit/:id', () => console.log('edit'));
 page.start();
 
 function renderMain (resultTemplate) {
