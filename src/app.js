@@ -4,11 +4,14 @@ import { getUserData } from './util.js';
 import { catalogView } from './views/catalogView.js';
 import { createView } from './views/createView.js';
 import { detailsView } from './views/detailsView.js';
+import { editView } from './views/editView.js';
 import { homeView } from './views/homeView.js';
 import { loginView } from './views/loginView.js';
+import { profileView } from './views/profileView.js';
 import { registerView } from './views/registerView.js';
 
 updateNav();
+notify();
 
 page(decorateContext);
 page('/', homeView);
@@ -18,7 +21,8 @@ page('/register', registerView);
 page('/logout', logout);
 page('/create', createView);
 page('/memes/details/:id', detailsView);
-page('/edit/:id', () => console.log('edit'));
+page('/edit/:id', editView);
+page('/profile', profileView);
 page.start();
 
 function renderMain (resultTemplate) {
@@ -41,4 +45,9 @@ function updateNav() {
         document.querySelector('.user').style.display = 'none';
         document.querySelector('.guest').style.display = 'block';
     }
+}
+
+function notify(message) {
+    const label = document.getElementById('errorBox');
+    errorBox.style.display = 'block';
 }
