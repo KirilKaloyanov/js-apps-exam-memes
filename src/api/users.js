@@ -34,7 +34,8 @@ export async function register(username, email, password, gender) {
     return result;
 }
 
-export function logout() {
+export function logout(ctx) {
     get('/users/logout');
     clearUserData();
+    ctx.updateNav();
 }
