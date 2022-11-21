@@ -11,7 +11,6 @@ import { profileView } from './views/profileView.js';
 import { registerView } from './views/registerView.js';
 
 updateNav();
-notify();
 
 page(decorateContext);
 page('/', homeView);

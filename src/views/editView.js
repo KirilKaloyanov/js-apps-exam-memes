@@ -45,9 +45,9 @@ export async function editView(ctx) {
 
     const formData = new FormData(event.target);
 
-    const title = formData.get("title");
-    const description = formData.get("description");
-    const imageUrl = formData.get("imageUrl");
+    const title = formData.get("title").trim();
+    const description = formData.get("description").trim();
+    const imageUrl = formData.get("imageUrl").trim();
 
     try {
       if (title == "" || description == "" || imageUrl == "") {

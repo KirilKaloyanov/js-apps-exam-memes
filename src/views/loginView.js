@@ -31,8 +31,8 @@ export const loginView = (ctx) => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    const email = formData.get("email");
-    const password = formData.get("password");
+    const email = formData.get("email").trim();
+    const password = formData.get("password").trim();
     try {
       if (email == "" || password == "") {
         throw new Error("All fields are required.");

@@ -52,11 +52,11 @@ export function registerView(ctx) {
 
     const formData = new FormData(event.target);
 
-    const username = formData.get("username");
-    const email = formData.get("email");
-    const password = formData.get("password");
-    const repeatPass = formData.get("repeatPass");
-    const gender = formData.get("gender");
+    const username = formData.get("username").trim();
+    const email = formData.get("email").trim();
+    const password = formData.get("password").trim();
+    const repeatPass = formData.get("repeatPass").trim();
+    const gender = formData.get("gender").trim();
     try {
       if (username == "" || password == "" || email == "") {
         throw new Error("All fields are required!");
