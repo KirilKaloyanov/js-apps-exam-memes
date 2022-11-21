@@ -32,6 +32,7 @@ function renderMain (resultTemplate) {
 function decorateContext(ctx, next) {
     ctx.render = renderMain;
     ctx.updateNav = updateNav;
+    ctx.notify = notify;
     next();
 }
 
@@ -49,5 +50,9 @@ function updateNav() {
 
 function notify(message) {
     const label = document.getElementById('errorBox');
-    errorBox.style.display = 'block';
+    if (message != undefined) {
+        label.style.display = 'block';
+        label.querySelector('span').textContent = message;
+        setTimeout(() => label.style.display = 'none', 3000);
+    }
 }
